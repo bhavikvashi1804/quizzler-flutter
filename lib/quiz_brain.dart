@@ -55,6 +55,7 @@ class QuizBrain {
     }
     return val;
   }
+
   void reset() {
     _questionNumber = 0;
   }
