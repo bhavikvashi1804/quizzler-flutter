@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Nov 08 16:11:07 IST 2019
+#Fri Nov 08 16:30:26 IST 2019
 4.path=flutter_assets/kernel_blob.bin
 8.set=ASSET
 6.path=classes.dex

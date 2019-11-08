@@ -70,19 +70,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns = quizBrain.getAnswer();
-                if (correctAns == true) {
-                  print('User got it right');
-                } else {
-                  print('User got it wrong');
-                }
-                setState(() {
-                  scoreKeeper.add(Icon(
-                    Icons.check,
-                    color: Colors.green,
-                  ));
-                  quizBrain.nextQuestion();
-                });
+                checkAns(true);
               },
             ),
           ),
@@ -100,20 +88,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAns = quizBrain.getAnswer();
-                if (correctAns == false) {
-                  print('User got it right');
-                } else {
-                  print('User got it wrong');
-                }
-                setState(() {
-                  scoreKeeper.add(Icon(
-                    Icons.close,
-                    color: Colors.red,
-                  ));
-
-                  quizBrain.nextQuestion();
-                });
+                checkAns(false);
               },
             ),
           ),
@@ -123,5 +98,25 @@ class _QuizPageState extends State<QuizPage> {
         ),
       ],
     );
+  }
+
+  void checkAns(bool userPickedAns) {
+    bool correctAns = quizBrain.getAnswer();
+    setState(() {
+      if (correctAns == userPickedAns) {
+        print('User got it right');
+        scoreKeeper.add(Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
+      } else {
+        print('User got it wrong');
+        scoreKeeper.add(Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
+      quizBrain.nextQuestion();
+    });
   }
 }
