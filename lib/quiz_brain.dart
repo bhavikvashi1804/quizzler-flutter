@@ -1,6 +1,8 @@
 import 'question.dart';
 
 class QuizBrain {
+  int _questionNumber = 0;
+
   List<Question> _questions = [
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
@@ -33,11 +35,19 @@ class QuizBrain {
   //_myVar access to only this class no other class has right to access it
   //other class can interact with private variable using getQuestion / getAnswer method
   //this will not allow the main.dart to change question text as well as question answer
-  String getQuestion(int qNo) {
-    return _questions[qNo].questionText;
+  String getQuestion() {
+    return _questions[_questionNumber].questionText;
   }
 
-  bool getAnswer(int qNo) {
-    return _questions[qNo].answerValue;
+  bool getAnswer() {
+    return _questions[_questionNumber].answerValue;
+  }
+
+  void nextQuestion() {
+    if (_questions.length - 1 > _questionNumber) {
+      _questionNumber++;
+    } else {
+      _questionNumber = 0;
+    }
   }
 }

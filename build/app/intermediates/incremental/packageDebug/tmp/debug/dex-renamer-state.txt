@@ -1,4 +1,4 @@
-#Fri Nov 08 15:53:05 IST 2019
+#Fri Nov 08 16:11:06 IST 2019
 base.0=C\:\\Users\\Bhavik Vashi\\StudioProjects\\quizzler-flutter\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
