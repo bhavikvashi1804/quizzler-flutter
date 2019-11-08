@@ -44,12 +44,7 @@ class QuizBrain {
   }
 
   void nextQuestion() {
-    print(isFinished().toString());
-    if (isFinished()) {
-      reset();
-    } else {
-      _questionNumber++;
-    }
+    _questionNumber++;
   }
 
   //improving app
@@ -60,7 +55,6 @@ class QuizBrain {
     }
     return val;
   }
-
   void reset() {
     _questionNumber = 0;
   }
