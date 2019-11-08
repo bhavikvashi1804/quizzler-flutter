@@ -1,7 +1,7 @@
 import 'question.dart';
 
 class QuizBrain {
-  List<Question> questions = [
+  List<Question> _questions = [
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
     Question('Approximately one quarter of human bones are in the feet.', true),
@@ -28,4 +28,16 @@ class QuizBrain {
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
   ];
+
+  //getQuestion & getAnswer makes it Encapsulation
+  //_myVar access to only this class no other class has right to access it
+  //other class can interact with private variable using getQuestion / getAnswer method
+  //this will not allow the main.dart to change question text as well as question answer
+  String getQuestion(int qNo) {
+    return _questions[qNo].questionText;
+  }
+
+  bool getAnswer(int qNo) {
+    return _questions[qNo].answerValue;
+  }
 }
