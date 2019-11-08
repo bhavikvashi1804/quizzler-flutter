@@ -44,10 +44,24 @@ class QuizBrain {
   }
 
   void nextQuestion() {
-    if (_questions.length - 1 > _questionNumber) {
-      _questionNumber++;
+    print(isFinished().toString());
+    if (isFinished()) {
+      reset();
     } else {
-      _questionNumber = 0;
+      _questionNumber++;
     }
+  }
+
+  //improving app
+  bool isFinished() {
+    bool val = false;
+    if (_questionNumber >= _questions.length - 1) {
+      val = true;
+    }
+    return val;
+  }
+
+  void reset() {
+    _questionNumber = 0;
   }
 }
